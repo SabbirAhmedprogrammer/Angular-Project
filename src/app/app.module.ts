@@ -1,6 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { FormsModule } from "@angular/forms";
+import { HttpClientModule } from "@angular/common/http";
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SearchCriteriaComponent } from './search-criteria/search-criteria.component';
@@ -9,7 +12,6 @@ import { WatchlistPageComponent } from './watchlist-page/watchlist-page.componen
 import { HeaderComponent } from './header/header.component';
 import { PopularComponent } from './popular/popular.component';
 import { MainPageComponent } from './main-page/main-page.component';
-import { ResultsComponent } from './results/results.component';
 
 @NgModule({
   declarations: [
@@ -20,11 +22,12 @@ import { ResultsComponent } from './results/results.component';
     HeaderComponent,
     PopularComponent,
     MainPageComponent,
-    ResultsComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
