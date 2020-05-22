@@ -1,5 +1,9 @@
-<div *ngFor="let movie of data?.results, index as i">
-    <img src="https://image.tmdb.org/t/p/w500/{{movie.poster_path}}" alt="movie poster">
-    <p>{{movie.original_title}}</p>
-    <p>{{movie.release_date}}</p>
+<div class="poster-container">
+    <div *ngFor="let movie of data?.results, index as i" class="movie-content">
+
+        <img src="https://image.tmdb.org/t/p/w500/{{movie.poster_path}}" alt="movie poster" class="image">
+        <p>{{movie.original_title}}</p>
+        <p>{{movie.release_date}}</p>
+
+    </div>
 </div>

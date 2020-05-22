@@ -1,0 +1,38 @@
+
+.image {
+    height:150px;
+    
+}
+.poster-container {
+    display:flex;
+    flex-wrap:wrap;
+
+}
+.movie-content {
+    border:2px solid black;
+    width:150px;
+    margin:5px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    height:300px;
+    padding-top:10px;
+}
+
+/* Must look into how to limit paragraph to a certain height. Issue: posters are being pushed up and not aligned to the same height
+position absolute maybe for the pictures? */
+
+/* *********Also look into why filter isn't returning the objects we want specifically */
+
+/* p {
+    text-overflow: ellipsis; 
+    
+    white-space: nowrap; /
+} */
+ /* paragraph to one line 
+ will make [...] at the end  */
+
+
+
+

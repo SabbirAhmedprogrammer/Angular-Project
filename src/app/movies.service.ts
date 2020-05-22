@@ -26,7 +26,7 @@ export class MoviesService {
     year: this.year,
   };
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
   //FILTER ADULT??
   //add in methods here
 
