@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "angular-project-MOVIES"
+    }
+  },
+  "defaultProject": "angular-project-MOVIES",
+  "cli": {
+    "analytics": "130a9816-5af1-42a5-9f02-bd3572c8ffa8"
+  }
 }
