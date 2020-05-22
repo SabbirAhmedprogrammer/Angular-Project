@@ -46,12 +46,13 @@ export class MoviesService {
   //on ngsubmit ( so first connect this to the search-criteria component then the html )
   //for the picture find where it is coming from on PostMan first
   getDiscoverData(year: string, vote: string, genre: string) {
+    console.log(year, vote, genre);
     return this.http.get(this.discoverEndpoint, {
       params: {
         api_key: this.apiKey,
         vote_average: vote,
         year: year,
-        genre: genre,
+        with_genres: genre,
       },
     });
   }

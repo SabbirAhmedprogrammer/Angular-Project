@@ -14,7 +14,7 @@ export class MovieListComponent implements OnInit {
   ngOnInit(): void {
     this.route.queryParams.subscribe((response) => {
       console.log(response);
-      this.service.getDiscoverData(response.year, response.vote, response.genre).subscribe((response) => {
+      this.service.getDiscoverData(response.year, response.voteCount, response.genre).subscribe((response) => {
         this.data = response;
         console.log(response);
       });
@@ -22,3 +22,4 @@ export class MovieListComponent implements OnInit {
   }
 
 }
+// response.vote was changed to response.votecount because of search-criteria.component.ts
