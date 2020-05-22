@@ -42,14 +42,14 @@ export class SearchCriteriaComponent implements OnInit {
     private service: MoviesService,
 
     private router: Router
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.service.getGenreData().subscribe((response) => {
       // console.log(response);
       this.genre = response;
     });
-
+    // this.getFormData(findForm);
     //get initial movie data!!
     //     this.service.getDiscoverData().subscribe((response) => {
     //       console.log(response);
