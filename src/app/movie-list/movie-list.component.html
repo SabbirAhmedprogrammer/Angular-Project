@@ -1,10 +1,6 @@
 <div class="movies-container">
-  <div *ngFor="let movie of data?.results; index as i" class="movie-content">
-    <img
-      src="https://image.tmdb.org/t/p/w500/{{ movie.poster_path }}"
-      alt="movie poster"
-      class="image"
-    />
+  <div *ngFor="let movie of data; index as i" class="movie-content">
+    <img src="https://image.tmdb.org/t/p/w500/{{ movie.poster_path }}" alt="movie poster" class="image" />
     <p class="title-text">{{ movie.original_title }}</p>
     <p>{{ movie.release_date }}</p>
     <button>

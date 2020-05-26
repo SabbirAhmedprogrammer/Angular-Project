@@ -7,7 +7,7 @@ import { SearchCriteriaComponent } from './search-criteria/search-criteria.compo
 
 const routes: Routes = [
   { path: '', redirectTo: '/main-page', pathMatch: 'full' },
-  { path: 'main-page', component: SearchCriteriaComponent },
+  { path: 'main-page', component: MainPageComponent },
   { path: 'watchlist-page', component: WatchlistPageComponent },
   { path: '**', redirectTo: '/main-page', pathMatch: 'full' },
 ];
@@ -16,4 +16,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

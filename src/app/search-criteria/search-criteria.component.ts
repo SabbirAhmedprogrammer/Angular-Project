@@ -17,17 +17,26 @@ export class SearchCriteriaComponent implements OnInit {
     private service: MoviesService,
     private router: Router,
     private route: ActivatedRoute
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.route.queryParams.subscribe((response) => {
-      console.log(response);
-      this.service
-        .getDiscoverData(response.year, response.voteCount, response.genre)
-        .subscribe((response) => {
-          this.data = response;
-          console.log(response);
+      console.log(response)
+      if (response.year || response.voteCount || response.genre) {
+        console.log("Hi 24")
+        this.service
+          .getDiscoverData(response.year, response.voteCount, response.genre)
+          .subscribe((response) => {
+            this.data = response['results'];
+            console.log(response);
+          });
+      } else {
+        this.service.getPopularMovies().subscribe((response) => {
+          console.log("Hi from 33")
+          console.log(response)
+          this.data = response['results'];
         });
+      }
     });
 
     this.service.getGenreData().subscribe((response) => {
@@ -35,9 +44,7 @@ export class SearchCriteriaComponent implements OnInit {
     });
 
     // why the brackets and quotes?
-    this.service.getPopularMovies().subscribe((response) => {
-      this.popularMovies = response['results'];
-    });
+
   }
 
   getFormData(form: NgForm): void {
