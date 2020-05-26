@@ -24,4 +24,8 @@ export class MovieListComponent implements OnInit {
   //   this.watchlistContainer.push(newMovie);
   //   this.service.setWatchlistMovie(this.watchlistContainer);
   // }
+
+  addToWatchlist(movie: any) {
+    this.service.addToWatchlist(movie);
+  }
 }

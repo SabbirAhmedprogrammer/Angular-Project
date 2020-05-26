@@ -4,16 +4,15 @@ import { MoviesService } from '../movies.service';
 @Component({
   selector: 'app-watchlist-page',
   templateUrl: './watchlist-page.component.html',
-  styleUrls: ['./watchlist-page.component.css']
+  styleUrls: ['./watchlist-page.component.css'],
 })
 export class WatchlistPageComponent implements OnInit {
+  data: any = null;
 
-  data: any = null
-
-  constructor(private service: MoviesService) { }
+  constructor(private service: MoviesService) {}
 
   ngOnInit(): void {
-    this.service.getWatchlistMovie()
+    this.data = this.service.getWatchlist();
   }
 
   // getData() {
@@ -21,9 +20,8 @@ export class WatchlistPageComponent implements OnInit {
   //     console.log(response);
   //   })
   // }
-
 }
 
 // this.data = this.service.getData()
-    //so this sends a response and we wait for the response, then do something via .subscribe.
-    //the .get method is the observable
+//so this sends a response and we wait for the response, then do something via .subscribe.
+//the .get method is the observable

@@ -70,6 +70,7 @@ export class MoviesService {
 
   addToWatchlist(movie: any) {
     this.watchlist.push(movie);
+    console.log(this.watchlist);
   }
 
   getWatchlist() {
