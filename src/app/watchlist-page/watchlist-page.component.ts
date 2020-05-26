@@ -13,7 +13,7 @@ export class WatchlistPageComponent implements OnInit {
   constructor(private service: MoviesService) { }
 
   ngOnInit(): void {
-    // this.getData()
+    this.service.getWatchlistMovie()
   }
 
   // getData() {

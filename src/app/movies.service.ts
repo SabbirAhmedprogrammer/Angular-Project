@@ -27,6 +27,8 @@ export class MoviesService {
     year: this.year,
   };
 
+  watchlistContainer = [];
+
   constructor(private http: HttpClient) { }
   //FILTER ADULT??
   //add in methods here
@@ -64,5 +66,14 @@ export class MoviesService {
         api_key: this.apiKey
       }
     })
+  }
+
+  getWatchlistMovie() {
+    return this.watchlistContainer;
+  }
+
+  setWatchlistMovie(watchlistMovie) {
+    this.watchlistContainer = watchlistMovie;
+    console.log(this.watchlistContainer);
   }
 }

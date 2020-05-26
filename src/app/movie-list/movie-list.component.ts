@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { MoviesService } from '../movies.service';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-movie-list',
@@ -9,6 +10,8 @@ import { MoviesService } from '../movies.service';
 })
 export class MovieListComponent implements OnInit {
   data: any = {};
+  watchlistContainer = [];
+
   constructor(private route: ActivatedRoute, private service: MoviesService) { }
 
   ngOnInit(): void {
@@ -19,6 +22,15 @@ export class MovieListComponent implements OnInit {
         // console.log(response);
       });
     });
+  }
+  addToWatchlist(index: number) {
+    newMovie = {
+      image: "https://image.tmdb.org/t/p/w500/{{movie.poster_path}}",
+      title: movie[index].original_title,
+      date: movie.release_date,
+    };
+    this.watchlistContainer.push(newMovie);
+    this.service.setWatchlistMovie(this.watchlistContainer);
   }
 
 }
