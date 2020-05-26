@@ -9,23 +9,27 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./movie-list.component.css'],
 })
 export class MovieListComponent implements OnInit {
+
+
   @Input() data: any;
 
-  constructor(private route: ActivatedRoute, private service: MoviesService) {}
+  showIndex: number = null;
 
-  ngOnInit(): void {}
-  // addToWatchlist(index: number) {
-  //   let newMovie = {
-  //     image: 'https://image.tmdb.org/t/p/w500/{{movie.poster_path}}',
-  //     //What to call?!
-  //     title: this.data[index].original_title,
-  //     date: this.data.release_date,
-  //   };
-  //   this.watchlistContainer.push(newMovie);
-  //   this.service.setWatchlistMovie(this.watchlistContainer);
-  // }
+  constructor(private route: ActivatedRoute, private service: MoviesService) { }
+
+  ngOnInit(): void { }
 
   addToWatchlist(movie: any) {
     this.service.addToWatchlist(movie);
   }
+
+  setShowIndex(index: number) {
+    this.showIndex = index;
+  }
+
+  removeShowIndex() {
+    this.showIndex = null;
+  }
+
+
 }

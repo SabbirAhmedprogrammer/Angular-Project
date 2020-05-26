@@ -29,7 +29,7 @@ export class MoviesService {
 
   watchlist: any = [];
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
   //FILTER ADULT??
   //add in methods here
 
@@ -72,6 +72,12 @@ export class MoviesService {
     this.watchlist.push(movie);
     console.log(this.watchlist);
   }
+
+  //updated version of the watchlist after things are removed in the component
+  removeWatchlist(index) {
+    this.watchlist.splice(index, 1);
+  }
+
 
   getWatchlist() {
     return this.watchlist;

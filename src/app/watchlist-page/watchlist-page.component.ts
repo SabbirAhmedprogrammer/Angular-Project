@@ -7,19 +7,22 @@ import { MoviesService } from '../movies.service';
   styleUrls: ['./watchlist-page.component.css'],
 })
 export class WatchlistPageComponent implements OnInit {
-  data: any = null;
+  data: any = [];
 
-  constructor(private service: MoviesService) {}
+  constructor(private service: MoviesService) { }
 
   ngOnInit(): void {
     this.data = this.service.getWatchlist();
   }
 
-  // getData() {
-  //   this.service.getData("2012").subscribe(response => {
-  //     console.log(response);
-  //   })
-  // }
+  removeFromWatchlist(index) {
+    this.service.removeWatchlist(index);
+    //so when we commented this line below, it still works fine.
+    // this.data.splice(index, 1);
+
+  }
+
+
 }
 
 // this.data = this.service.getData()

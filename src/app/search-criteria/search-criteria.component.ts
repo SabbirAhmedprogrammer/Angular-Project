@@ -23,16 +23,14 @@ export class SearchCriteriaComponent implements OnInit {
     this.route.queryParams.subscribe((response) => {
       console.log(response)
       if (response.year || response.voteCount || response.genre) {
-        console.log("Hi 24")
-        this.service
-          .getDiscoverData(response.year, response.voteCount, response.genre)
-          .subscribe((response) => {
-            this.data = response['results'];
-            console.log(response);
-          });
+        // console.log("Hi 24")
+        this.service.getDiscoverData(response.year, response.voteCount, response.genre).subscribe((response) => {
+          this.data = response['results'];
+          console.log(response);
+        });
       } else {
         this.service.getPopularMovies().subscribe((response) => {
-          console.log("Hi from 33")
+          // console.log("Hi from 33")
           console.log(response)
           this.data = response['results'];
         });
@@ -43,7 +41,6 @@ export class SearchCriteriaComponent implements OnInit {
       this.genre = response;
     });
 
-    // why the brackets and quotes?
 
   }
 

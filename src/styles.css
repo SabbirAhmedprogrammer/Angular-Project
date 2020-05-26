@@ -3,7 +3,12 @@ body {
     background-color:lightgrey;
 }
 
-p, img, div {
+p, img, div, button {
     margin: 0;
     padding:0;
 }
+
+.icon {
+    padding:2px;
+  }
+  
