@@ -6,21 +6,18 @@
       </button>
       <img src="https://image.tmdb.org/t/p/w500/{{ movie.poster_path }}" alt="movie poster" class="image" />
     </div>
-    <p class="title-text">{{ movie.original_title }}</p>
-    <p>{{ movie.release_date }}</p>
-    <p (click)="setShowIndex(i)">See More...</p>
+    <button (click)="setShowIndex(i)">More Info</button>
 
 
     <div class="popup-container" *ngIf="showIndex==i">
       <div class="popup">
-        <div class="popup-test">
-          <img src="https://image.tmdb.org/t/p/w500/{{ movie.poster_path }}" alt="movie poster" class="image" />
-          <p class="title-text">{{ movie.original_title }}</p>
-          <p>{{ movie.release_date }}</p>
-          <p>Rating:{{movie.vote_average}}</p>
-          <p>{{ movie.overview }}</p>
-          <button class="exit" (click)="removeShowIndex()">EXIT</button>
-        </div>
+
+        <img src="https://image.tmdb.org/t/p/w500/{{ movie.poster_path }}" alt="movie poster" class="image" />
+        <p class="title-text">{{ movie.original_title }}</p>
+        <p>{{ movie.release_date }}</p>
+        <p>Rating:{{movie.vote_average}}</p>
+        <p>{{ movie.overview }}</p>
+        <button class="exit" (click)="removeShowIndex()">EXIT</button>
 
       </div>
     </div>
