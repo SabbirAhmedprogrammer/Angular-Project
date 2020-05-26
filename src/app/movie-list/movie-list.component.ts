@@ -8,15 +8,15 @@ import { MoviesService } from '../movies.service';
   styleUrls: ['./movie-list.component.css'],
 })
 export class MovieListComponent implements OnInit {
-  data: any = null;
+  data: any = {};
   constructor(private route: ActivatedRoute, private service: MoviesService) { }
 
   ngOnInit(): void {
     this.route.queryParams.subscribe((response) => {
-      console.log(response);
+      // console.log(response);
       this.service.getDiscoverData(response.year, response.voteCount, response.genre).subscribe((response) => {
         this.data = response;
-        console.log(response);
+        // console.log(response);
       });
     });
   }

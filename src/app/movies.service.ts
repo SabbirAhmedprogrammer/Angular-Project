@@ -17,6 +17,7 @@ export class MoviesService {
   baseUrl: string = 'https://api.themoviedb.org/3';
   genreEndpoint: string = `${this.baseUrl}/genre/movie/list`;
   discoverEndpoint: string = `${this.baseUrl}/discover/movie`;
+  popularEndpoint: string = `${this.baseUrl}/movie/popular`;
   voteCount: string | string[];
   year: any;
 
@@ -55,5 +56,13 @@ export class MoviesService {
         with_genres: genre,
       },
     });
+  }
+
+  getPopularMovies() {
+    return this.http.get(this.popularEndpoint, {
+      params: {
+        api_key: this.apiKey
+      }
+    })
   }
 }

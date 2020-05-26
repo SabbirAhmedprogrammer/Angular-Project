@@ -9,44 +9,18 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./search-criteria.component.css'],
 })
 export class SearchCriteriaComponent implements OnInit {
+  popularMovies: any;
   genre: any = null;
-
-  yearsArray: number[] = [
-    2000,
-    2001,
-    2002,
-    2003,
-    2004,
-    2005,
-    2006,
-    2007,
-    2008,
-    2009,
-    2010,
-    2011,
-    2012,
-    2013,
-    2014,
-    2015,
-    2016,
-    2017,
-    2018,
-    2019,
-    2020,
-    2021,
-    2022,
-  ];
   data: Object;
 
   constructor(
     private service: MoviesService,
-
     private router: Router
   ) { }
 
   ngOnInit(): void {
     this.service.getGenreData().subscribe((response) => {
-      // console.log(response);
+      // console.log(response["genres"]); ------------------------------review the bracket notation to access data
       this.genre = response;
     });
     // this.getFormData(findForm);
@@ -55,6 +29,13 @@ export class SearchCriteriaComponent implements OnInit {
     //       console.log(response);
     //       this.data = response;
     //     });
+
+
+    // why the brackets and quotes?
+    this.service.getPopularMovies().subscribe((response) => {
+      // console.log(response["results"]);
+      this.popularMovies = response["results"];
+    })
   }
 
   getFormData(form: NgForm): void {
@@ -67,4 +48,6 @@ export class SearchCriteriaComponent implements OnInit {
     });
     form.reset();
   }
+
+
 }
