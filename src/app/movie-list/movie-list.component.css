@@ -1,34 +1,29 @@
-
 .image {
-    height:150px;
-    
+  height: 150px;
 }
-.poster-container {
-    display:flex;
-    flex-wrap:wrap;
-
+.movies-container {
+  display: flex;
+  flex-wrap: wrap;
 }
 .movie-content {
-    border:2px solid black;
-    width:150px;
-    margin:5px;
-    display:flex; 
-    flex-direction:column;
-    align-items:center; 
-    justify-content:center;
-    height:300px;
-    padding-top:10px;
-   
-    
+  border: 2px solid black;
+  width: 150px;
+  margin: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+  padding-top: 10px;
 }
 
 /* look up how to show the full title on hover (doesnt expand the title where it is on the page) */
 
 .title-text {
-    text-overflow:ellipsis;
-    white-space: nowrap;
-    overflow:hidden;
-    width:125px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 125px;
 }
 
 /* Must look into how to limit paragraph to a certain height. Issue: posters are being pushed up and not aligned to the same height
@@ -41,9 +36,5 @@ position absolute maybe for the pictures? */
     
     white-space: nowrap; /
 } */
- /* paragraph to one line 
+/* paragraph to one line 
  will make [...] at the end  */
-
-
-
-

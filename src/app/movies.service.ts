@@ -27,9 +27,9 @@ export class MoviesService {
     year: this.year,
   };
 
-  watchlistContainer = [];
+  watchlist: any = [];
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
   //FILTER ADULT??
   //add in methods here
 
@@ -63,17 +63,25 @@ export class MoviesService {
   getPopularMovies() {
     return this.http.get(this.popularEndpoint, {
       params: {
-        api_key: this.apiKey
-      }
-    })
+        api_key: this.apiKey,
+      },
+    });
   }
 
-  getWatchlistMovie() {
-    return this.watchlistContainer;
+  addToWatchlist(movie: any) {
+    this.watchlist.push(movie);
   }
 
-  setWatchlistMovie(watchlistMovie) {
-    this.watchlistContainer = watchlistMovie;
-    console.log(this.watchlistContainer);
+  getWatchlist() {
+    return this.watchlist;
   }
+
+  // getWatchlistMovie() {
+  //   return this.watchlistContainer;
+  // }
+
+  // setWatchlistMovie(watchlistMovie) {
+  //   this.watchlistContainer = watchlistMovie;
+  //   console.log(this.watchlistContainer);
+  // }
 }

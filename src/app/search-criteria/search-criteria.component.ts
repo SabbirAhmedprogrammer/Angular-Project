@@ -15,27 +15,29 @@ export class SearchCriteriaComponent implements OnInit {
 
   constructor(
     private service: MoviesService,
-    private router: Router
-  ) { }
+    private router: Router,
+    private route: ActivatedRoute
+  ) {}
 
   ngOnInit(): void {
+    this.route.queryParams.subscribe((response) => {
+      console.log(response);
+      this.service
+        .getDiscoverData(response.year, response.voteCount, response.genre)
+        .subscribe((response) => {
+          this.data = response;
+          console.log(response);
+        });
+    });
+
     this.service.getGenreData().subscribe((response) => {
-      // console.log(response["genres"]); ------------------------------review the bracket notation to access data
       this.genre = response;
     });
-    // this.getFormData(findForm);
-    //get initial movie data!!
-    //     this.service.getDiscoverData().subscribe((response) => {
-    //       console.log(response);
-    //       this.data = response;
-    //     });
-
 
     // why the brackets and quotes?
     this.service.getPopularMovies().subscribe((response) => {
-      // console.log(response["results"]);
-      this.popularMovies = response["results"];
-    })
+      this.popularMovies = response['results'];
+    });
   }
 
   getFormData(form: NgForm): void {
@@ -48,6 +50,4 @@ export class SearchCriteriaComponent implements OnInit {
     });
     form.reset();
   }
-
-
 }

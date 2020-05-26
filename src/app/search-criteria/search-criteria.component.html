@@ -1,12 +1,22 @@
 <h1>Find A Movie:</h1>
 <form #findForm="ngForm" (ngSubmit)="getFormData(findForm)">
   <label for="vote-text">Score</label>
-  <input type="text" id="vote-text" name="vote-text" placeholder="1 - 10" ngModel />
+  <input
+    type="text"
+    id="vote-text"
+    name="vote-text"
+    placeholder="1 - 10"
+    ngModel
+  />
   <label for="select-genre">Genre</label>
   <select name="select-genre" id="select-genre" ngModel>
     <!-- so we targeted the single object of genre which contains the objects of genres, thus genre.genres -->
     <!-- attribute binding -->
-    <option [value]="singleGenre.id" *ngFor="let singleGenre of genre?.genres">{{ singleGenre.name }}</option>
+    <option
+      [value]="singleGenre.id"
+      *ngFor="let singleGenre of genre?.genres"
+      >{{ singleGenre.name }}</option
+    >
     <!-- <option value="action">Action</option>
         <option value="animation">Animation</option>
         <option value="comedy">Comedy</option>
@@ -20,16 +30,23 @@
   <button>Search</button>
 </form>
 
+<app-movie-list [data]="data"></app-movie-list>
 <!-- css style this bad boy below -->
-<div class="popular-Container">
-  <div *ngFor="let movie of popularMovies; index as i" class="popular-container-movie">
-    <img src="https://image.tmdb.org/t/p/w500/{{movie.poster_path}}" alt="movie poster" class="image">
-    <p class="title-text">{{movie.original_title}}</p>
-    <p>{{movie.release_date}}</p>
+<!-- <div class="popular-container">
+  <div
+    *ngFor="let movie of popularMovies; index as i"
+    class="popular-container-movie"
+  >
+    <img
+      src="https://image.tmdb.org/t/p/w500/{{ movie.poster_path }}"
+      alt="movie poster"
+      class="image"
+    />
+    <p class="title-text">{{ movie.original_title }}</p>
+    <p>{{ movie.release_date }}</p>
   </div>
-</div>
+</div> -->
 
 <!-- maybe event listener to style this above popular container off when form is submitted? -->
-
 
 <!-- element.name lets us create an element with the class altogether! class will be the name -->
