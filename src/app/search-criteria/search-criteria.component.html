@@ -1,18 +1,22 @@
 <div class="search-container">
-  <h1>Find A Movie</h1>
+  <h1 class="title">Find a Film</h1>
   <form #findForm="ngForm" (ngSubmit)="getFormData(findForm)" class="search-form">
-    <label for="vote-text">Score</label>
-    <input type="text" id="vote-text" name="vote-text" placeholder="1 - 10" ngModel />
-    <label for="select-genre">Genre</label>
-    <select name="select-genre" id="select-genre" ngModel>
-      <!-- so we targeted the single object of genre which contains the objects of genres, thus genre.genres -->
-      <!-- attribute binding -->
-      <option [value]="singleGenre.id" *ngFor="let singleGenre of genre?.genres">{{ singleGenre.name }}</option>
+    <div class="search-items">
+      <label for="vote-text" class="label">Score</label>
+      <input type="text" class="input" id="vote-text" name="vote-text" placeholder="1 - 10" ngModel />
+      <label for="select-genre" class="label">Genre</label>
+      <select name="select-genre" id="select-genre" class="genre input" ngModel>
+        <!-- so we targeted the single object of genre which contains the objects of genres, thus genre.genres -->
+        <!-- attribute binding -->
+        <option [value]="singleGenre.id" *ngFor="let singleGenre of genre?.genres">{{ singleGenre.name }}</option>
 
-    </select>
-    <label for="year-text">Year</label>
-    <input type="text" name="year-text" id="year-text" ngModel />
-    <button>Search</button>
+      </select>
+      <label for="year-text" class="label">Year</label>
+      <input type="text" class="input" name="year-text" id="year-text" ngModel />
+    </div>
+    <div class="button-div">
+      <button class="label button">S e a r c h</button>
+    </div>
   </form>
 </div>
 <app-movie-list [data]="data"></app-movie-list>
