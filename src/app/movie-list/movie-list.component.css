@@ -1,19 +1,28 @@
 .image {
   height: 150px;
   box-shadow: 2px 2px 7px 5px #3b49a8;
+  border:3px solid black;
 }
 
-.image:hover {
+.popup-writing {
+  background-color:rgba(255, 255, 255, .4);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+}
+
+.button-picture:hover {
   /* height:300px; */
   /* transform:translateY(-10px); */
  transform:scale(1.25);
  transition-duration: 0.4s;
  box-shadow: 2px 2px 7px 5px #d4e026;
+ z-index:3;
 }
 .movies-container {
   display: flex;
   overflow-x:auto;
-  /* flex-wrap:wrap; */
 }
 .movie-content {
   width: 150px;
@@ -24,22 +33,44 @@
   align-items: center;
   justify-content: center;
   padding:0;
+  margin-right:30px;
 }
 
-
-
+.main-image{
+  height:200px;
+}
 
 .popup-container{
   height:100vh;
   width:100vw;
-  background-color:rgba(0,0,0,.8);
+  background-color:rgba(0, 0, 0, 0.8);
   position:fixed;
   top:0;
   left:0;
   display:flex;
   justify-content:center;
   align-items:center;
-  z-index:2;
+  z-index:5;
+}
+
+
+.popup {
+  background-color:lightskyblue;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  width:60%;
+  padding:15px;
+}
+
+.popup-image{
+  height:300px;
+}
+
+.underline {
+  border-bottom:3px solid black;
+  margin-bottom:5px;
 }
 
 .button-picture{
@@ -58,14 +89,6 @@
 .icon {
   color:grey;
   font-size:1rem;
-}
-
-.popup {
-  background-color:lightgreen;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  width:50%;
 }
 
 .allbuttons {
@@ -91,15 +114,34 @@
 }
 
 
-/* Must look into how to limit paragraph to a certain height. Issue: posters are being pushed up and not aligned to the same height
-position absolute maybe for the pictures? */
+@media only screen and (min-width: 768px) {
+  .movies-container {
+    overflow-x:none;
+    flex-wrap:wrap;
+  }
 
-/* *********Also look into why filter isn't returning the objects we want specifically */
+  .movie-content{
+    margin:10px;
+  }
 
-/* p {
-    text-overflow: ellipsis; 
-    
-    white-space: nowrap; /
-} */
-/* paragraph to one line 
- will make [...] at the end  */
+  .popup {
+    background-color:lightskyblue;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    width:50%;
+    padding:20px;
+  }
+
+  .popup-image {
+    height:400px;
+    width:275px;
+  }
+
+  .more-info {
+    margin-top:10px;
+  }
+
+
+}
