@@ -23,6 +23,7 @@
 .movies-container {
   display: flex;
   overflow-x:auto;
+  padding-top: 20px;
 }
 .movie-content {
   width: 150px;
