@@ -13,8 +13,6 @@
 }
 
 .button-picture:hover {
-  /* height:300px; */
-  /* transform:translateY(-10px); */
  transform:scale(1.25);
  transition-duration: 0.4s;
  box-shadow: 2px 2px 7px 5px #d4e026;
