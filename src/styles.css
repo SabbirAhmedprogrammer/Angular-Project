@@ -5,7 +5,7 @@ body {
     font-family: 'Bangers', cursive;
 }
 
-p, img, div, button {
+p, img, div, button, body{
     margin: 0;
     padding:0;
 }
