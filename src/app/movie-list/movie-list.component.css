@@ -1,6 +1,6 @@
 .image {
   height: 150px;
-  box-shadow: 2px 2px 7px 5px #3b49a8;
+  box-shadow: 2px 2px 7px 5px #cad0f3;
   border:3px solid black;
 }
 
@@ -15,7 +15,7 @@
 .button-picture:hover {
  transform:scale(1.25);
  transition-duration: 0.4s;
- box-shadow: 2px 2px 7px 5px #d4e026;
+ box-shadow: 2px 2px 7px 10px #d4e026;
  z-index:3;
 }
 .movies-container {
