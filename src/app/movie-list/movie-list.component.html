@@ -6,7 +6,7 @@
       </button>
       <img src="https://image.tmdb.org/t/p/w500/{{ movie.poster_path }}" alt="movie poster" class="image" />
     </div>
-    <button (click)="setShowIndex(i)">More Info</button>
+    <button class="more-info allbuttons" (click)="setShowIndex(i)">More Info</button>
 
 
     <div class="popup-container" *ngIf="showIndex==i">
@@ -17,13 +17,10 @@
         <p>{{ movie.release_date }}</p>
         <p>Rating:{{movie.vote_average}}</p>
         <p>{{ movie.overview }}</p>
-        <button class="exit" (click)="removeShowIndex()">EXIT</button>
+        <button class="exit allbuttons" (click)="removeShowIndex()">EXIT</button>
 
       </div>
     </div>
 
   </div>
-
-
-
 </div>
