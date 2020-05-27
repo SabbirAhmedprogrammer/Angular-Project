@@ -118,6 +118,9 @@
   .movies-container {
     overflow-x:none;
     flex-wrap:wrap;
+    margin-top:10px;
+    padding-top:25px;
+    justify-content:space-around;
   }
 
   .movie-content{
