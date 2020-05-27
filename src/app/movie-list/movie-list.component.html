@@ -2,7 +2,7 @@
   <div *ngFor="let movie of data; index as i" class="movie-content">
     <div class="button-picture">
       <button class="button-positioning">
-        <i class="fas fa-heart icon" (click)="addToWatchlist(movie)"></i>
+        <i class="fas fa-heart icon" (click)="addToWatchlist(movie)" [ngClass]="{hearted: movie.isClicked}"></i>
       </button>
       <img src="https://image.tmdb.org/t/p/w500/{{ movie.poster_path }}" alt="movie poster" class="image main-image" />
     </div>

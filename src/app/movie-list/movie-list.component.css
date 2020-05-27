@@ -1,3 +1,4 @@
+
 .image {
   height: 150px;
   box-shadow: 2px 2px 7px 5px #cad0f3;
@@ -112,6 +113,9 @@
   box-shadow: 2px 2px 7px 5px #d4e026;
 }
 
+.hearted {
+  color:red;
+}
 
 @media only screen and (min-width: 768px) {
   .movies-container {

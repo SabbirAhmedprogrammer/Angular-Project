@@ -19,7 +19,8 @@
     </div>
   </form>
 </div>
-<app-movie-list [data]="data"></app-movie-list>
+<!-- movie from movie list ts comes here as the event -->
+<app-movie-list [data]="data" (added)="addToWatchlist($event)"></app-movie-list>
 
 
 <!-- element.name lets us create an element with the class altogether! class will be the name -->

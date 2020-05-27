@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { MoviesService } from '../movies.service';
 import { NgForm } from '@angular/forms';
@@ -12,7 +12,8 @@ export class MovieListComponent implements OnInit {
 
 
   @Input() data: any;
-
+  //this is to let the parent know about the event see line 24
+  @Output() added = new EventEmitter<any>();
   showIndex: number = null;
 
   constructor(private route: ActivatedRoute, private service: MoviesService) { }
@@ -20,7 +21,8 @@ export class MovieListComponent implements OnInit {
   ngOnInit(): void { }
 
   addToWatchlist(movie: any) {
-    this.service.addToWatchlist(movie);
+
+    this.added.emit(movie)
   }
 
   setShowIndex(index: number) {
@@ -30,6 +32,7 @@ export class MovieListComponent implements OnInit {
   removeShowIndex() {
     this.showIndex = null;
   }
+
 
 
 }
